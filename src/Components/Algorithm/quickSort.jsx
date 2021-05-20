@@ -62,7 +62,7 @@ export async function quickSort() {
 	var n = arr.length;
 	await quickSortHelper(arr, 0, n - 1);
 	for (var i = 0; i < n; i++) {
-		await MakeDelay(30)
+		await MakeDelay(400)
 		arr[i].style.background = FINAL_COLOR;
 	}
 	document.getElementById("qsort").className = 'btn';
