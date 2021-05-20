@@ -29,7 +29,7 @@ export async function bubbleSort() {
 	}
 
 	for (i = 0; i < n; i++) {
-		await MakeDelay(400)
+		await MakeDelay(200)
 		arr[i].style.background = FINAL_COLOR;
 	}
 	document.getElementById("bsort").className = 'btn';
