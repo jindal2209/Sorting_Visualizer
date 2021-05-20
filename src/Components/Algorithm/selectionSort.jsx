@@ -1,7 +1,9 @@
-import { COMPARE_COLOR, delay, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, SWAP_COLOR, Swap, MIN_COLOR } from "../Uitlities/utils";
+import { COMPARE_COLOR, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, SWAP_COLOR, Swap, MIN_COLOR, disableAllButtons, delay } from "../Uitlities/utils";
 
 export async function selectionSort() {
+	disableAllButtons(true);
 	var arr = document.querySelectorAll('.element-bar');
+	document.getElementById("ssort").className = 'btndisabled';
 	var n = arr.length
 
 	for (var i = 0; i < n; i++) {
@@ -44,4 +46,6 @@ export async function selectionSort() {
 		await MakeDelay(30)
 		arr[i].style.background = FINAL_COLOR;
 	}
+	document.getElementById("ssort").className = 'btn';
+	disableAllButtons(false);
 }

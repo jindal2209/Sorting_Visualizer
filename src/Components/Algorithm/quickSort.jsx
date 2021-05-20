@@ -1,8 +1,7 @@
-import { delay, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, randomNumberFrom, MIN_COLOR } from "../Uitlities/utils";
+import { FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, randomNumberFrom, MIN_COLOR, disableAllButtons, delay } from "../Uitlities/utils";
 
 async function partition(ele, s, e) {
 	var n = randomNumberFrom(s, e);
-
 	Swap(ele[n], ele[e]);
 
 	await MakeDelay(delay);
@@ -56,11 +55,16 @@ async function quickSortHelper(ele, s, e) {
 	return;
 }
 export async function quickSort() {
+	disableAllButtons(true);
+	document.getElementById("qsort").className = 'btndisabled';
+
 	var arr = document.querySelectorAll('.element-bar');
 	var n = arr.length;
 	await quickSortHelper(arr, 0, n - 1);
 	for (var i = 0; i < n; i++) {
-		// await MakeDelay(30)
+		await MakeDelay(30)
 		arr[i].style.background = FINAL_COLOR;
 	}
+	document.getElementById("qsort").className = 'btn';
+	disableAllButtons(false);
 }
