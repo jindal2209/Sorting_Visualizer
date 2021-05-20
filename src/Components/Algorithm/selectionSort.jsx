@@ -43,7 +43,7 @@ export async function selectionSort() {
 	}
 
 	for (i = 0; i < n; i++) {
-		await MakeDelay(400)
+		await MakeDelay(delay)
 		arr[i].style.background = FINAL_COLOR;
 	}
 	document.getElementById("ssort").className = 'btn';
