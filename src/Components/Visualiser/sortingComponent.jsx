@@ -8,6 +8,7 @@ import { bubbleSort } from '../Algorithm/bubbleSort';
 import { selectionSort } from '../Algorithm/selectionSort';
 import { insertionSort } from '../Algorithm/insertionSort';
 import { quickSort } from '../Algorithm/quickSort';
+import { mergeSort } from '../Algorithm/mergeSort';
 
 function SortingComponent() {
 	var [arr, setArr] = useState([]);
@@ -92,13 +93,15 @@ function SortingComponent() {
 		return true;
 	}
 
-	// function sort() {
-	// 	var jssorted = arr.slice().sort((a, b) => (a - b));
-	// 	// var mys = quickSort(arr, 0, arrSize - 1);
-	// 	// console.log(checkEqual(mysorted, jssorted));
-	// 	setArr(prevarr => [...mys]);
-	// 	// resetArr()
-	// }
+	function sort() {
+		// var jssorted = arr.slice().sort((a, b) => (a - b));
+		var mys = mergeSort(arr, 0, arrSize - 1)
+		// console.log(mys);
+		// var mys = quickSort(arr, 0, arrSize - 1);
+		// console.log(checkEqual(mys, jssorted));
+		setArr(prevarr => [...mys]);
+		// resetArr()
+	}
 
 	return (
 		<div>
@@ -112,6 +115,7 @@ function SortingComponent() {
 				<br />
 				<br />
 				<div><button className='btn' onClick={resetArr}>Generate array</button></div>
+				<div><button className='btn' id='msort' onClick={mergeSort}>mergeSort Sort</button></div>
 				<div><button className='btn' id='qsort' onClick={quickSort}>Quick Sort</button></div>
 				<div><button className='btn' id='bsort' onClick={bubbleSort}>Bubble Sort</button></div>
 				<div><button className='btn' id='ssort' onClick={selectionSort}>Selection Sort</button></div>

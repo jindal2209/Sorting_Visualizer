@@ -1,7 +1,7 @@
 # Sorting Visualizer
 Project Hosted at https://jindal2209.github.io/Sorting_Visualizer
 
-Merge Sort still remaining.
+Delay slider needs to be implemented. If you are interested in contributing or providing suggestions please make a pull request or add as an issue.
 
 # Getting Started with Create React App
 
