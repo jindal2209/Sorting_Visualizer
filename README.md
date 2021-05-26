@@ -1,5 +1,5 @@
 # Sorting Visualizer
-Project Hosted at <a href='https://jindal2209.github.io/Sorting_Visualizer' target='_blank'>https://jindal2209.github.io/Sorting_Visualizer</a>
+Project Hosted at https://jindal2209.github.io/Sorting_Visualizer
 
 Delay slider needs to be implemented. If you are interested in contributing or providing suggestions please make a pull request or add as an issue.
 
