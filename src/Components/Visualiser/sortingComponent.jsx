@@ -29,10 +29,6 @@ function SortingComponent() {
 
 
 	useEffect(() => {
-		// var space = window.screen.width - 700 + 1;
-		// var x = parseInt(space / 3);
-		// setArrSize(x);
-		// console.log(space, arrSize);
 		resetArr();
 	}, [])
 
@@ -84,25 +80,6 @@ function SortingComponent() {
 		resetArr();
 	}
 
-	function checkEqual(jssorted, mysorted) {
-		for (var i = 0; i < mysorted.length; i++) {
-			if (jssorted[i] !== mysorted[i]) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	function sort() {
-		// var jssorted = arr.slice().sort((a, b) => (a - b));
-		var mys = mergeSort(arr, 0, arrSize - 1)
-		// console.log(mys);
-		// var mys = quickSort(arr, 0, arrSize - 1);
-		// console.log(checkEqual(mys, jssorted));
-		setArr(prevarr => [...mys]);
-		// resetArr()
-	}
-
 	return (
 		<div>
 			<div className='sideNavbar'>
@@ -120,6 +97,13 @@ function SortingComponent() {
 				<div><button className='btn' id='bsort' onClick={bubbleSort}>Bubble Sort</button></div>
 				<div><button className='btn' id='ssort' onClick={selectionSort}>Selection Sort</button></div>
 				<div><button className='btn' id='isort' onClick={insertionSort}>Insertion Sort</button></div>
+				<div>
+					<br />
+					<br />
+					<a href="https://github.com/jindal2209/Sorting_Visualizer" target='_blank' rel='noreferrer' >
+						<img style={{ width: '90px' }} src={process.env.PUBLIC_URL + "/iff.png"} alt='myGithub' />
+					</a>
+				</div>
 			</div>
 
 			<div className='array'>
