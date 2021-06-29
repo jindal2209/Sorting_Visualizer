@@ -36,43 +36,33 @@ function SortingComponent() {
 	function setArrSizeHelper(val) {
 		console.log(val);
 		if (val > 100) {
-			changeDelay(0)
 			setWid(2)
 		}
 		else if (val > 80) {
-			changeDelay(20);
 			setWid(5);
 		}
 		else if (val > 70) {
-			changeDelay(70);
 			setWid(7);
 		}
 		else if (val > 60) {
-			changeDelay(100);
 			setWid(10);
 		}
 		else if (val > 50) {
-			changeDelay(120);
 			setWid(15);
 		}
 		else if (val > 40) {
-			changeDelay(150);
 			setWid(19);
 		}
 		else if (val > 30) {
-			changeDelay(250);
 			setWid(25);
 		}
 		else if (val > 20) {
-			changeDelay(300);
 			setWid(33);
 		}
 		else if (val > 10) {
-			changeDelay(400)
 			setWid(40);
 		}
 		else {
-			changeDelay(500)
 			setWid(60);
 		}
 
@@ -90,6 +80,12 @@ function SortingComponent() {
 					<input id='rangeSlider' type='range' min='5' max='200' value={arrSize} onChange={(e) => setArrSizeHelper(e.target.value)} />
 				</label>
 				<br />
+				<label className='sliderLabel'>
+					Delay
+					<br />
+					<input type='range' min='5' max='200' onChange={(e) => { changeDelay(e.target.value) }} />
+				</label>
+				<br />
 				<br />
 				<div><button className='btn' onClick={resetArr}>Generate array</button></div>
 				<div><button className='btn' id='msort' onClick={mergeSort}>mergeSort Sort</button></div>
@@ -98,7 +94,6 @@ function SortingComponent() {
 				<div><button className='btn' id='ssort' onClick={selectionSort}>Selection Sort</button></div>
 				<div><button className='btn' id='isort' onClick={insertionSort}>Insertion Sort</button></div>
 				<div>
-					<br />
 					<br />
 					<a href="https://github.com/jindal2209/Sorting_Visualizer" target='_blank' rel='noreferrer' >
 						<img style={{ width: '90px' }} src={process.env.PUBLIC_URL + "/iff.png"} alt='myGithub' />
